@@ -1,0 +1,61 @@
+
+:root{--bg:#0c0809;--panel:#17101200;--card:#181012;--line:#2e2024;--text:#f2ebe8;--muted:#b9acab;--accent:#d7263d;--accent2:#ff6b73}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accent2)}
+img{max-width:100%;display:block}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+/* top nav */
+nav.top{position:sticky;top:0;z-index:5;background:rgba(12,8,9,.86);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav.top .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
+nav.top .brand{display:flex;align-items:center;gap:10px;color:var(--text);text-decoration:none;font-weight:700;letter-spacing:.04em}
+nav.top .brand img{width:30px;height:30px;border-radius:7px}
+nav.top ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
+nav.top ul a{color:var(--muted);text-decoration:none;font-size:.95rem}
+nav.top ul a:hover,nav.top ul a.on{color:var(--text)}
+/* hero */
+.hero{position:relative;text-align:center;padding:36px 20px 0;min-height:640px;background:#000 url(images/hero.jpg) center 40%/cover no-repeat}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(12,8,9,.35),rgba(12,8,9,0) 30%,rgba(12,8,9,0) 78%,var(--bg))}
+.hero>*{position:relative}
+.hero .logo{width:min(560px,86%);margin:0 auto;filter:drop-shadow(0 8px 24px rgba(0,0,0,.7))}
+.intro{text-align:center;padding:30px 20px 6px}
+.intro p.tag{max-width:600px;margin:0 auto 24px;color:#ded3d0;font-size:1.15rem}
+.btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 22px;border-radius:999px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600}
+.btn.ghost{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.25)}
+.btn:hover{filter:brightness(1.12)}
+/* sections */
+.block{padding:54px 0 10px}
+.block h2{font-size:1.6rem;margin:0 0 6px}
+.block .sub{color:var(--muted);margin:0 0 26px}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+.tile h3{margin:0 0 6px;font-size:1.05rem;color:var(--accent2)}
+.tile p{margin:0;color:var(--muted);font-size:.97rem}
+.cards{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.cards img{width:100%;border-radius:12px;box-shadow:0 8px 22px rgba(0,0,0,.55);transition:transform .2s}
+.cards img:hover{transform:translateY(-6px) rotate(-1.5deg)}
+/* document pages */
+.docpage{padding:44px 0 70px}
+.docpage h1{font-size:2rem;margin:0 0 4px}
+.docpage .meta{color:var(--muted);margin:0 0 28px;font-size:.95rem}
+.notice{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:10px;padding:16px 18px;margin-bottom:30px}
+.notice p{margin:0}
+.docpage section{margin-bottom:28px}
+.docpage h2{font-size:1.15rem;margin:0 0 6px}
+.docpage section p{margin:0;color:var(--muted)}
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0 18px;margin-bottom:10px}
+details summary{cursor:pointer;padding:15px 0;font-weight:600;list-style:none}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:"+";float:right;color:var(--accent2);font-size:1.3rem;line-height:1.2}
+details[open] summary::after{content:"\2212"}
+details p,details ol{color:var(--muted);margin:0 0 16px}
+details ol{padding-left:20px}
+.contact{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;margin-top:30px}
+.contact h2{margin:0 0 6px}
+.contact p{margin:0 0 8px;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:26px 20px 44px;text-align:center;color:var(--muted);font-size:.9rem}
+footer a{color:var(--muted);margin:0 8px}
+@media(max-width:760px){.tiles{grid-template-columns:1fr}.cards{grid-template-columns:repeat(3,1fr)}.hero{min-height:520px}}
+@media(max-width:420px){.cards{grid-template-columns:repeat(2,1fr)}nav.top ul{gap:12px}}
